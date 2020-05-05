@@ -37,6 +37,8 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         InitialValues();
+        //Optimization Settings For PC
+        //TODO: Be careful when targetFrameRate 300 Mobile Platforms consume more battery it should be 60 in the end.
         Application.targetFrameRate = 300;
     }
 
