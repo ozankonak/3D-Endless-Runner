@@ -30,6 +30,10 @@ public class EventManager : MonoBehaviour
     public string JumpButton { get; private set; } = "Jump";
     public string CrouchButton { get; private set; } = "Crouch";
 
+    //ADS
+    public string WatchAdsGetCoin { get; private set; } = "WatchAdsGetCoin";
+    public string WatchAdsGetEnergy { get; private set; } = "WatchAdsGetEnergy";
+
     #endregion
     public static EventManager instance
     {

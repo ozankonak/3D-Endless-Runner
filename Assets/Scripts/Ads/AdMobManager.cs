@@ -121,19 +121,12 @@ public class AdMobManager : MonoBehaviour
     {
         if (ShopManager.instance.getCoinButtonClicked)
         {
-            ShopManager.instance.getCoinButtonClicked = false;
-            DataManager.instance.coins += 50;
-            DataManager.instance.Save();
+            EventManager.TriggerEvent(EventManager.instance.WatchAdsGetCoin);
 
-            MainMenuManager.instance.ChangeCoinText(DataManager.instance.coins.ToString());
-            ShopManager.instance.ChangeShopCoinsText(DataManager.instance.coins.ToString());
         }
         else if (MainMenuManager.instance.yesButtonClicked)
         {
-            MainMenuManager.instance.yesButtonClicked = false;
-            AudioManager.instance.PlayButtonClickSound();
-            EnergyManager.instance.AddEnergy(MainMenuManager.instance.energyPerGame);
-            MainMenuManager.instance.SetActiveWatchAdsEarnEnergyPanel(false);
+            EventManager.TriggerEvent(EventManager.instance.WatchAdsGetEnergy);
         }
 
     }

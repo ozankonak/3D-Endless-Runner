@@ -23,12 +23,18 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        InitialValues();
+
+        EventManager.StartListening(EventManager.instance.WatchAdsGetCoin, GiveCoins);
+    }
+
+    private void InitialValues()
+    {
         SetActiveShopPanel(false);
         SetActiveNotEnoughtPanel(false);
         ChangeShopCoinsText(DataManager.instance.coins.ToString());
 
         SetActiveShowCaseObjects(DataManager.instance.selectedPlayer);
- 
     }
 
     #region Button Configurations
@@ -93,5 +99,14 @@ public class ShopManager : MonoBehaviour
         showCaseObjects[num].SetActive(true);
     }
 
+    private void GiveCoins()
+    {
+        getCoinButtonClicked = false;
+        DataManager.instance.coins += 50;
+        DataManager.instance.Save();
+
+        MainMenuManager.instance.ChangeCoinText(DataManager.instance.coins.ToString());
+        ChangeShopCoinsText(DataManager.instance.coins.ToString());
+    }
 
 }
