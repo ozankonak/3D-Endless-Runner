@@ -717,32 +717,32 @@ MonoBehaviour:
   platformNormal:
   - prefab: {fileID: 8112534690479104242, guid: b915336e42e50b14a867ed06f882d469,
       type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   platformSplit:
   - prefab: {fileID: 4574143719521073441, guid: d325955c909559e47b2a5ff626d7d4da,
       type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   platformThin:
   - prefab: {fileID: 962885329914420901, guid: 7c87627e8197d2b499f2d780fbf82a43, type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   platformStairsUp:
   - prefab: {fileID: 9138646061264841869, guid: c2dcde11c3940444cb201b92a3c6be05,
       type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   platformStairsDown:
   - prefab: {fileID: 8073412678179295508, guid: 356c196d9110bff43811a7c07ea6c028,
       type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   platformTSection:
   - prefab: {fileID: 1195261276078161831, guid: e8cf0b80df59dcf47b8bad6823a0be15,
       type: 3}
-    amount: 10
-    expandable: 0
+    amount: 2
+    expandable: 1
   pooledItems: []
 --- !u!4 &230524151
 Transform:

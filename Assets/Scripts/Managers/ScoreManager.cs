@@ -18,14 +18,20 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         UIManager.instance.ChangeScoreText(((int)(currentScore + currentCoin)).ToString());
+        StartCoroutine(UpdateScore());
     }
 
-    private void Update()
+    IEnumerator UpdateScore()
     {
+        yield return new WaitForSeconds(0.5f);
+
         if (GameManager.instance.status == GameStatus.GamePlay)
         {
-            currentScore += 2f * Time.deltaTime;
+            currentScore++;
             UIManager.instance.ChangeScoreText(((int)(currentScore + currentCoin)).ToString());
         }
+
+        StartCoroutine(UpdateScore());
+
     }
 }
