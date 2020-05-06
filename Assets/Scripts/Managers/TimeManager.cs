@@ -22,16 +22,10 @@ public class TimeManager : MonoBehaviour
 
     private DateTime currentDate;
 
-    private float timer = 0;
-
     private void Start()
     {
         TimePassed();
-    }
-
-    private void Update()
-    {
-        UpdateEnergy();
+        StartCoroutine(UpdateEnergy());
     }
 
     private void OnApplicationQuit()
@@ -59,15 +53,13 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    private void UpdateEnergy()
+    IEnumerator UpdateEnergy()
     {
-        timer += Time.deltaTime;
+        yield return new WaitForSecondsRealtime(60);
 
-        if (timer >= 60)
-        {
-            timer = 0;
-            EnergyManager.instance.AddEnergy(1);
-        }
+        EnergyManager.instance.AddEnergy(1);
+
+        StartCoroutine(UpdateEnergy());
     }
 
 
